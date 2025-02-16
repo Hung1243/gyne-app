@@ -2,40 +2,14 @@
 
 A React Native mobile application built with Expo.
 
-## Prerequisites
+## Tech Stack
 
-Before you begin, ensure you have the following installed:
-
-- Node.js (v16 or higher)
-- npm or yarn
-- Expo CLI (`npm install -g expo-cli`)
-- iOS Simulator (for Mac users) or Android Studio (for Android development)
-
-## Installation
-
-1. Clone the repository:
-
-```bash
-git clone https://github.com/Hung1243/gyne-app.git
-cd gyne-app
-```
-
-2. Install dependencies:
-
-```bash
-npm install
-# or
-yarn install
-```
-
-## Running the App
-
-The app can be run using the following command:
-
-```bash
-# Start the development server
-npx expo start
-```
+- React Native
+- Expo
+- React Navigation
+- Tamagui (UI Components)
+- TypeScript
+- Redux Toolkit (State Management)
 
 ## Project Structure
 
@@ -66,14 +40,6 @@ gyne-app/
 ├── .gitignore        # Git ignore file
 ```
 
-## Tech Stack
-
-- React Native
-- Expo
-- React Navigation
-- Tamagui (UI Components)
-- TypeScript
-- Redux Toolkit (State Management)
 
 ## Features
 
@@ -84,25 +50,63 @@ gyne-app/
 
 ## Development
 
+### Prerequisites
+
+Before you begin, ensure you have the following installed:
+
+- Node.js (v16 or higher)
+- Npm
+- Expo CLI (`npm install -g expo-cli`)
+- iOS Simulator (for Mac users) or Android Studio (for Android development)
+
 The project uses several development tools:
 
 - **ESLint** for code linting
 - **Prettier** for code formatting
 - **TypeScript** for type checking
 
-To maintain code quality, run:
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/Hung1243/gyne-app.git
+   cd gyne-app
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+
+   ```bash
+   npm start
+   ```
+
+4. Run the app on a simulator or physical device.
+
+
+5. To maintain code quality, run:
 
 ```bash
-# Type checking
-npm run typescript
-# or
-yarn typescript
-
 # Linting
 npm run lint
-# or
-yarn lint
 ```
+
+### ESlint & Prettier
+
+- If using VSCode install them from:
+  - ESlint: <https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint>
+  - Prettier: <https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode>
+
+### API Documentation
+
+The backend API is documented using OpenAPI. Access the documentation at:
+
+<https://api.gyne.com/docs> - Change this later
 
 ## Building for Production
 
@@ -118,11 +122,51 @@ expo build:android
 
 ## Contributing
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+As this is a private repository, contributions are currently limited to the core team. If you are a team member and would like to contribute, please follow these steps:
+
+1. Switch to ```dev``` then create a new branch for your feature or bug fix:
+
+   ```shell
+   git checkout dev
+   git pull origin dev
+   git checkout -b feature-branch-name
+   ```
+
+2. Make your changes and commit them with a clear message:
+
+   ```shell
+   git commit -m "feat: Add XYZ feature"
+   ```
+
+3. Push your branch to the repository:
+
+   ```shell
+   git push origin feature-branch-name
+   ```
+
+4. Create a pull request (PR) and assign a reviewer.
+5. Once approved, your changes will be merged into the main branch.
+
+For any questions or access requests, contact the repository owner.
+
+### Commit Best Practices
+
+To maintain a clean and consistent commit history, follow these best practices:
+
+- Use Conventional Commits:
+
+   ```none
+   feat: Add new feature for period tracking
+   fix: Resolve issue with login authentication
+   chore: Update dependencies and configurations
+   refactor: Improve code structure for API calls
+   ```
+
+- Write clear and concise commit messages.
+Group related changes into a single commit.
+- Use present tense and imperative mood in commit messages.
+- Avoid vague commit messages like "fix bug" or "update code."
+- Reference issues when applicable (e.g., ```fix: Resolve login issue (#42)```).
 
 ## License
 
