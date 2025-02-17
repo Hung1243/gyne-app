@@ -1,6 +1,10 @@
-import { TamaguiProvider } from 'tamagui';
-import config from '../configs/tamagui.config';
+import { TamaguiProvider, Theme } from 'tamagui';
+import config from '../../tamagui.config';
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  return <TamaguiProvider config={config}>{children}</TamaguiProvider>;
+  return (
+    <TamaguiProvider config={config}>
+      <Theme name="light">{children}</Theme>
+    </TamaguiProvider>
+  );
 }

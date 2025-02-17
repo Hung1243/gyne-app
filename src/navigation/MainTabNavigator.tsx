@@ -1,10 +1,10 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { MainTabParamList } from './types';
-import { HomeScreen } from '../screens/home';
 import { CalendarScreen } from '../screens/calendar';
 import { PartnerScreen } from '../screens/partner';
 import { ProfileScreen } from '../screens/profile';
+import HomeScreen from '../screens/home';
 
 const Tab = createBottomTabNavigator<MainTabParamList>();
 
