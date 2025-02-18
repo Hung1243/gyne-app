@@ -1,12 +1,11 @@
+import { ToastProvider, ToastViewport } from '@tamagui/toast';
+import { useFonts } from 'expo-font';
 import 'react-native-gesture-handler';
 import 'react-native-reanimated';
-import { useFonts } from 'expo-font';
-import { store } from './src/redux/store';
 import { Provider as ReduxProvider } from 'react-redux';
-import { ThemeProvider } from './src/providers/ThemeProvider';
 import { AppNavigator } from './src/navigation/AppNavigator';
-import { ToastProvider, ToastViewport } from '@tamagui/toast';
-import { YStack } from 'tamagui';
+import { ThemeProvider } from './src/providers/ThemeProvider';
+import { store } from './src/redux/store';
 
 export default function App() {
   console.log('🏁 App mounting');

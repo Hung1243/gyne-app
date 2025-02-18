@@ -55,7 +55,7 @@ gyne-app/
 Before you begin, ensure you have the following installed:
 
 - Node.js (v16 or higher)
-- Npm
+- Yarn v1
 - Expo CLI (`npm install -g expo-cli`)
 - iOS Simulator (for Mac users) or Android Studio (for Android development)
 
@@ -77,13 +77,13 @@ The project uses several development tools:
 2. Install dependencies:
 
    ```bash
-   npm install
+   yarn install
    ```
 
 3. Start the development server:
 
    ```bash
-   npm start
+   yarn start
    ```
 
 4. Run the app on a simulator or physical device.
@@ -93,7 +93,7 @@ The project uses several development tools:
 
 ```bash
 # Linting
-npm run lint
+yarn run lint
 ```
 
 ### ESlint & Prettier
