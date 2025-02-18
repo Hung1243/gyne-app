@@ -40,7 +40,6 @@ gyne-app/
 ├── .gitignore        # Git ignore file
 ```
 
-
 ## Features
 
 - Period Tracking: Log periods, symptoms, and moods easily.
@@ -88,7 +87,6 @@ The project uses several development tools:
 
 4. Run the app on a simulator or physical device.
 
-
 5. To maintain code quality, run:
 
 ```bash
@@ -124,7 +122,7 @@ expo build:android
 
 As this is a private repository, contributions are currently limited to the core team. If you are a team member and would like to contribute, please follow these steps:
 
-1. Switch to ```dev``` then create a new branch for your feature or bug fix:
+1. Switch to `dev` then create a new branch for your feature or bug fix:
 
    ```shell
    git checkout dev
@@ -155,18 +153,18 @@ To maintain a clean and consistent commit history, follow these best practices:
 
 - Use Conventional Commits:
 
-   ```none
-   feat: Add new feature for period tracking
-   fix: Resolve issue with login authentication
-   chore: Update dependencies and configurations
-   refactor: Improve code structure for API calls
-   ```
+  ```none
+  feat: Add new feature for period tracking
+  fix: Resolve issue with login authentication
+  chore: Update dependencies and configurations
+  refactor: Improve code structure for API calls
+  ```
 
 - Write clear and concise commit messages.
-Group related changes into a single commit.
+  Group related changes into a single commit.
 - Use present tense and imperative mood in commit messages.
 - Avoid vague commit messages like "fix bug" or "update code."
-- Reference issues when applicable (e.g., ```fix: Resolve login issue (#42)```).
+- Reference issues when applicable (e.g., `fix: Resolve login issue (#42)`).
 
 ## License
 
