@@ -20,8 +20,23 @@ const animations = createAnimations({
   quick: {
     type: 'spring',
     damping: 20,
-    mass: 1.2,
-    stiffness: 250,
+    mass: 1,
+    stiffness: 200,
+  },
+  fast: {
+    type: 'timing',
+    duration: 200,
+    delay: 0,
+  },
+  medium: {
+    type: 'timing',
+    duration: 300,
+    delay: 0,
+  },
+  slow: {
+    type: 'timing',
+    duration: 600,
+    delay: 0,
   },
 });
 
