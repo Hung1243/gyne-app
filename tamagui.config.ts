@@ -25,12 +25,12 @@ const animations = createAnimations({
   },
   fast: {
     type: 'timing',
-    duration: 200,
+    duration: 100,
     delay: 0,
   },
   medium: {
     type: 'timing',
-    duration: 300,
+    duration: 250,
     delay: 0,
   },
   slow: {

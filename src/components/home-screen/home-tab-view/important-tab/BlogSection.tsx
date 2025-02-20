@@ -1,4 +1,53 @@
-import { YStack, H2, Text, Button } from 'tamagui';
+import { H2, XStack, YStack } from 'tamagui';
+import BlogCard from './BlogCard';
+import { getRandomValue } from '../../../../utils/randomUtils';
+
+export type Blog = {
+  title: string;
+  url: string;
+  imageUrl: string;
+};
+
+const blogs: Blog[] = [
+  {
+    title: 'Sex Life',
+    url: 'asd',
+    imageUrl:
+      'https://img.freepik.com/free-vector/flat-design-doodle-dynamic-background_23-2149322640.jpg?semt=ais_hybrid',
+  },
+  {
+    title: 'Gaming',
+    url: 'asd2',
+    imageUrl:
+      'https://img.freepik.com/free-vector/flat-design-doodle-dynamic-background_23-2149322640.jpg?semt=ais_hybrid',
+  },
+  {
+    title: 'Going out',
+    url: 'asd3',
+    imageUrl:
+      'https://img.freepik.com/free-vector/flat-design-doodle-dynamic-background_23-2149322640.jpg?semt=ais_hybrid',
+  },
+  {
+    title: 'Super man',
+    url: 'asd4',
+    imageUrl:
+      'https://img.freepik.com/free-vector/flat-design-doodle-dynamic-background_23-2149322640.jpg?semt=ais_hybrid',
+  },
+  {
+    title: 'Eating burger',
+    url: 'asd5',
+    imageUrl:
+      'https://img.freepik.com/free-vector/flat-design-doodle-dynamic-background_23-2149322640.jpg?semt=ais_hybrid',
+  },
+  {
+    title: 'Punching bag',
+    url: 'asd6',
+    imageUrl:
+      'https://img.freepik.com/free-vector/flat-design-doodle-dynamic-background_23-2149322640.jpg?semt=ais_hybrid',
+  },
+];
+
+const cardHeights = [160, 180, 230];
 
 export default function BlogSection() {
   return (
@@ -6,43 +55,38 @@ export default function BlogSection() {
       <H2 fontWeight={'bold'} fontSize={'$4'}>
         Blog
       </H2>
-      <YStack
-        gap={'$3'}
-        backgroundColor={'$color2'}
+      <XStack
+        gap={'$4'}
         borderRadius={'$6'}
-        paddingHorizontal={'$3'}
-        paddingVertical={'$4'}
-        alignItems="center"
+        alignItems="flex-start"
         shadowOffset={{ width: 4, height: 4 }}
         shadowOpacity={0.25}
         shadowRadius={4}
         shadowColor={'$shadow1'}
       >
-        <Text fontSize={'$5'} color={'$accent12'} fontWeight={'bold'}>
-          Tới kinh vào
-        </Text>
-        <Text color="$color12" fontWeight={'bold'} fontSize={'$8'}>
-          10 Ngày
-        </Text>
-        <Text color={'$accent11'}>Dự đoán: hôm nay khả năng có thai cao!</Text>
-        <Button
-          backgroundColor={'$color1'}
-          borderRadius={'$10'}
-          size={'$2'}
-          color={'$accent11'}
-        >
-          Đánh dấu kỳ kinh
-        </Button>
-      </YStack>
-
-      <Text
-        fontSize={'$1'}
-        color={'$color11'}
-        alignSelf="center"
-        paddingTop={'$2'}
-      >
-        Lưu ý: Dự đoán không thay thế cho việc ngừa thai
-      </Text>
+        <YStack flex={1} gap={'$4'}>
+          {blogs.map((blog, index) =>
+            index % 2 === 0 ? (
+              <BlogCard
+                height={getRandomValue(cardHeights)}
+                key={blog.url}
+                {...blog}
+              />
+            ) : null,
+          )}
+        </YStack>
+        <YStack flex={1} gap={'$4'}>
+          {blogs.map((blog, index) =>
+            index % 2 !== 0 ? (
+              <BlogCard
+                height={getRandomValue(cardHeights)}
+                key={blog.url}
+                {...blog}
+              />
+            ) : null,
+          )}
+        </YStack>
+      </XStack>
     </YStack>
   );
 }
