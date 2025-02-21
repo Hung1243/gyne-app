@@ -1,11 +1,11 @@
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { CalendarScreen } from '../screens/calendar';
-import HomeScreen from '../screens/home';
 import { PartnerScreen } from '../screens/partner';
 import { ProfileScreen } from '../screens/profile';
 import { lightPalette } from '../theme/themes';
 import { MainTabParamList } from './types';
+import { HomeStackNavigator } from './HomeStackNavigator.tsx';
 
 const Tab = createBottomTabNavigator<MainTabParamList>();
 
@@ -22,7 +22,7 @@ export function MainTabNavigator() {
     >
       <Tab.Screen
         name="Home"
-        component={HomeScreen}
+        component={HomeStackNavigator}
         options={{
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="home" size={size} color={color} />

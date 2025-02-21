@@ -19,7 +19,6 @@ export type TabList = {
 
 const AnimatedYStack = styled(YStack, {
   flex: 1,
-  x: 0,
   opacity: 1,
   animation: 'fast',
   variants: {
@@ -48,18 +47,8 @@ const TabsRovingIndicator = ({
     <YStack
       position="absolute"
       backgroundColor="$color9"
-      opacity={0.7}
+      opacity={1}
       animation="quick"
-      enterStyle={{
-        opacity: 0,
-      }}
-      exitStyle={{
-        opacity: 0,
-      }}
-      {...(active && {
-        backgroundColor: '$color8',
-        opacity: 0.6,
-      })}
       {...props}
     />
   );
@@ -123,29 +112,25 @@ export default function CustomizedTabView({ tabList }: { tabList: TabList }) {
     >
       {/* Tab List */}
       <YStack position="relative">
-        <AnimatePresence>
-          {intentAt && (
-            <TabsRovingIndicator
-              borderRadius="$4"
-              width={intentAt.width}
-              height={intentAt.height}
-              x={intentAt.x}
-              y={intentAt.y}
-            />
-          )}
-        </AnimatePresence>
-        <AnimatePresence>
-          {activeAt && (
-            <TabsRovingIndicator
-              borderRadius="$4"
-              width={activeAt.width}
-              height={activeAt.height}
-              x={activeAt.x}
-              y={activeAt.y}
-              zIndex={1}
-            />
-          )}
-        </AnimatePresence>
+        {intentAt && (
+          <TabsRovingIndicator
+            borderRadius="$4"
+            width={intentAt.width}
+            height={intentAt.height}
+            x={intentAt.x}
+            y={intentAt.y}
+          />
+        )}
+        {activeAt && (
+          <TabsRovingIndicator
+            borderRadius="$4"
+            width={activeAt.width}
+            height={activeAt.height}
+            x={activeAt.x}
+            y={activeAt.y}
+            zIndex={1}
+          />
+        )}
 
         {/* Bar Background */}
         <View
@@ -186,7 +171,7 @@ export default function CustomizedTabView({ tabList }: { tabList: TabList }) {
       </YStack>
 
       {/* Tab content */}
-      <AnimatePresence exitBeforeEnter custom={{ direction }} initial={false}>
+      <AnimatePresence exitBeforeEnter custom={{ direction }} initial={true}>
         <AnimatedYStack key={currentTab} padding={'$3'}>
           <Tabs.Content
             value={currentTab}

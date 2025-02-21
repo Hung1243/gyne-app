@@ -1,55 +1,21 @@
-import { H2, XStack, YStack } from 'tamagui';
+import Ionicons from '@expo/vector-icons/Ionicons';
+import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { Button, H2, View, XStack, YStack } from 'tamagui';
+import { HomeStackParamList } from '../../../../navigation/types';
+import { lightAccentPalette } from '../../../../theme/themes';
 import BlogCard from './BlogCard';
-import { getRandomValue } from '../../../../utils/randomUtils';
+import { useState } from 'react';
+import { Blog } from '../../../../types/Blog';
+import { blogs as blogsData } from '../../../../constants/mockdata';
 
-export type Blog = {
-  title: string;
-  url: string;
-  imageUrl: string;
-};
-
-const blogs: Blog[] = [
-  {
-    title: 'Sex Life',
-    url: 'asd',
-    imageUrl:
-      'https://img.freepik.com/free-vector/flat-design-doodle-dynamic-background_23-2149322640.jpg?semt=ais_hybrid',
-  },
-  {
-    title: 'Gaming',
-    url: 'asd2',
-    imageUrl:
-      'https://img.freepik.com/free-vector/flat-design-doodle-dynamic-background_23-2149322640.jpg?semt=ais_hybrid',
-  },
-  {
-    title: 'Going out',
-    url: 'asd3',
-    imageUrl:
-      'https://img.freepik.com/free-vector/flat-design-doodle-dynamic-background_23-2149322640.jpg?semt=ais_hybrid',
-  },
-  {
-    title: 'Super man',
-    url: 'asd4',
-    imageUrl:
-      'https://img.freepik.com/free-vector/flat-design-doodle-dynamic-background_23-2149322640.jpg?semt=ais_hybrid',
-  },
-  {
-    title: 'Eating burger',
-    url: 'asd5',
-    imageUrl:
-      'https://img.freepik.com/free-vector/flat-design-doodle-dynamic-background_23-2149322640.jpg?semt=ais_hybrid',
-  },
-  {
-    title: 'Punching bag',
-    url: 'asd6',
-    imageUrl:
-      'https://img.freepik.com/free-vector/flat-design-doodle-dynamic-background_23-2149322640.jpg?semt=ais_hybrid',
-  },
-];
-
-const cardHeights = [160, 180, 230];
+const DISPLAYED_BLOG_COUNT = 5;
+const CARD_HEIGHTS = [180, 240, 160, 160, 180];
 
 export default function BlogSection() {
+  const navigation = useNavigation<StackNavigationProp<HomeStackParamList>>();
+  const [blogs, setBlogs] = useState<Blog[]>(blogsData);
+
   return (
     <YStack>
       <H2 fontWeight={'bold'} fontSize={'$4'}>
@@ -68,9 +34,10 @@ export default function BlogSection() {
           {blogs.map((blog, index) =>
             index % 2 === 0 ? (
               <BlogCard
-                height={getRandomValue(cardHeights)}
-                key={blog.url}
+                height={CARD_HEIGHTS[index]}
+                key={blog.id}
                 {...blog}
+                onPress={() => navigation.navigate('Blog', { id: blog.id })}
               />
             ) : null,
           )}
@@ -79,12 +46,32 @@ export default function BlogSection() {
           {blogs.map((blog, index) =>
             index % 2 !== 0 ? (
               <BlogCard
-                height={getRandomValue(cardHeights)}
-                key={blog.url}
+                height={CARD_HEIGHTS[index]}
+                key={blog.id}
                 {...blog}
+                onPress={() => navigation.navigate('Blog', { id: blog.id })}
               />
             ) : null,
           )}
+          <View flex={1} justifyContent="center">
+            <Button
+              fontWeight={'bold'}
+              borderWidth={'$0'}
+              backgroundColor={'transparent'}
+              color={'$accent11'}
+              animation={'fast'}
+              pressStyle={{
+                scale: 0.9,
+              }}
+              variant="outlined"
+              iconAfter={
+                <Ionicons name="arrow-forward" color={lightAccentPalette[10]} />
+              }
+              onPress={() => navigation.navigate('BlogList')}
+            >
+              Xem thêm
+            </Button>
+          </View>
         </YStack>
       </XStack>
     </YStack>

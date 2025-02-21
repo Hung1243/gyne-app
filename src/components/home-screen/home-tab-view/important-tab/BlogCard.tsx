@@ -1,5 +1,5 @@
 import { Card, CardProps, Image, Text } from 'tamagui';
-import { Blog } from './BlogSection';
+import { Blog } from '../../../../types/Blog';
 
 export default function BlogCard({
   title,
