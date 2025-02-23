@@ -7,7 +7,7 @@ import { lightAccentPalette } from '../../../../theme/themes';
 import BlogCard from './BlogCard';
 import { useState } from 'react';
 import { Blog } from '../../../../types/Blog';
-import { blogs as blogsData } from '../../../../constants/mockdata';
+import { blogsData as blogsData } from '../../../../constants/mockdata';
 
 const DISPLAYED_BLOG_COUNT = 5;
 const CARD_HEIGHTS = [180, 240, 160, 160, 180];

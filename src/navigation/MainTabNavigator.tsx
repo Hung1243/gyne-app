@@ -3,7 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { CalendarScreen } from '../screens/calendar';
 import { PartnerScreen } from '../screens/partner';
 import { ProfileScreen } from '../screens/profile';
-import { lightPalette } from '../theme/themes';
+import { lightGrays, lightPalette } from '../theme/themes';
 import { MainTabParamList } from './types';
 import { HomeStackNavigator } from './HomeStackNavigator.tsx';
 
@@ -14,7 +14,7 @@ export function MainTabNavigator() {
     <Tab.Navigator
       screenOptions={{
         tabBarActiveTintColor: lightPalette[8],
-        tabBarInactiveTintColor: '#aab8c2',
+        tabBarInactiveTintColor: lightGrays.gray,
         tabBarStyle: {
           paddingBottom: 5,
         },

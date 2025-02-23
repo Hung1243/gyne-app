@@ -1,13 +1,13 @@
 import React from 'react';
-import { ScrollView, XStack, YStack, ZStack } from 'tamagui';
+import { YStack } from 'tamagui';
 import HomeTabView from '../../components/home-screen/home-tab-view';
 import TopWelcome from '../../components/home-screen/TopWelcome';
 
 export default function HomeScreen() {
   return (
-    <ScrollView backgroundColor="$background">
+    <YStack flex={1} backgroundColor="$color1">
       <TopWelcome />
       <HomeTabView />
-    </ScrollView>
+    </YStack>
   );
 }

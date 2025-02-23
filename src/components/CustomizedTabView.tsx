@@ -1,6 +1,6 @@
 import { ReactElement, useState } from 'react';
 import {
-  AnimatePresence,
+  ScrollView,
   StackProps,
   styled,
   TabLayout,
@@ -102,13 +102,14 @@ export default function CustomizedTabView({ tabList }: { tabList: TabList }) {
 
   return (
     <Tabs
+      flex={1}
       value={currentTab}
       onValueChange={setCurrentTab}
       orientation="horizontal"
       flexDirection="column"
       backgroundColor="transparent"
       position="relative"
-      marginTop={'$3'}
+      marginTop={'$2'}
     >
       {/* Tab List */}
       <YStack position="relative">
@@ -150,6 +151,7 @@ export default function CustomizedTabView({ tabList }: { tabList: TabList }) {
           unstyled
           zIndex={5}
           paddingHorizontal={'$3'}
+          backgroundColor="transparent"
         >
           {tabList.map(({ key, label }) => (
             <Tabs.Tab
@@ -161,6 +163,7 @@ export default function CustomizedTabView({ tabList }: { tabList: TabList }) {
               active={false}
               unstyled
               key={key}
+              backgroundColor="transparent"
             >
               <Text fontWeight={'bold'} textAlign="center">
                 {label}
@@ -170,9 +173,9 @@ export default function CustomizedTabView({ tabList }: { tabList: TabList }) {
         </Tabs.List>
       </YStack>
 
-      {/* Tab content */}
-      <AnimatePresence exitBeforeEnter custom={{ direction }} initial={true}>
-        <AnimatedYStack key={currentTab} padding={'$3'}>
+      {/* Tab content with animation */}
+      {/* <AnimatePresence exitBeforeEnter custom={{ direction }} initial={true}>
+        <AnimatedYStack key={currentTab}>
           <Tabs.Content
             value={currentTab}
             forceMount
@@ -182,7 +185,14 @@ export default function CustomizedTabView({ tabList }: { tabList: TabList }) {
             {tabList.find((obj) => obj.key === currentTab)?.content}
           </Tabs.Content>
         </AnimatedYStack>
-      </AnimatePresence>
+      </AnimatePresence> */}
+
+      {/* Tab content without animation */}
+      <Tabs.Content flex={1} value={currentTab} paddingBottom={0}>
+        <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
+          {tabList.find((obj) => obj.key === currentTab)?.content}
+        </ScrollView>
+      </Tabs.Content>
     </Tabs>
   );
 }

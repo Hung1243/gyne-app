@@ -4,7 +4,7 @@ import BlogSection from './BlogSection';
 
 export default function ImportantTab() {
   return (
-    <YStack>
+    <YStack padding={'$3'}>
       <PredictionSection />
       <BlogSection />
     </YStack>

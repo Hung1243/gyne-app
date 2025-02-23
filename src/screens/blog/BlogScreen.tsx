@@ -2,7 +2,7 @@ import { RouteProp, useRoute } from '@react-navigation/native';
 import { H1, ScrollView, Text, View } from 'tamagui';
 import { HomeStackParamList } from '../../navigation/types';
 import { useState } from 'react';
-import { blogs } from '../../constants/mockdata';
+import { blogsData } from '../../constants/mockdata';
 import { Blog } from '../../types/Blog';
 import RenderHTML from '@builder.io/react-native-render-html';
 import { lightPalette } from '../../theme/themes';
@@ -11,7 +11,7 @@ export default function BlogScreen() {
   const route = useRoute<RouteProp<HomeStackParamList, 'Blog'>>();
   const { id } = route.params;
   const [blog, setBlog] = useState<Blog | undefined>(
-    blogs.find((blog) => blog.id === id),
+    blogsData.find((blog) => blog.id === id),
   );
 
   if (!blog)
