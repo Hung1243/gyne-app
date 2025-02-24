@@ -1,0 +1,29 @@
+{
+  "markedDates": {
+    "2025-02-14": {
+      "selected": true,
+      "selectedColor": "#FFCC00",
+      "textColor": "#000000"
+    },
+    "2025-02-17": {
+      "selected": true,
+      "selectedColor": "#E6F7FF",
+      "textColor": "#000000"
+    },
+    "2025-02-18": {
+      "selected": true,
+      "selectedColor": "#E6F7FF",
+      "textColor": "#000000"
+    },
+    "2025-02-19": {
+      "selected": true,
+      "selectedColor": "#E6F7FF",
+      "textColor": "#000000"
+    },
+    "2025-02-20": {
+      "selected": true,
+      "selectedColor": "#E6F7FF",
+      "textColor": "#000000"
+    }
+  }
+}
