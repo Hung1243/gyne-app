@@ -9,3 +9,9 @@ export type MainTabParamList = {
   Partner: undefined;
   Profile: undefined;
 };
+
+export type HomeStackParamList = {
+  Main: undefined;
+  BlogList: undefined;
+  Blog: { id: string };
+};
