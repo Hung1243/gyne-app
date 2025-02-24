@@ -16,7 +16,7 @@ export const darkPalette = [
   'hsla(274, 100%, 97%, 1)',
 ];
 export const lightPalette = [
-  'hsla(340, 100%, 99%, 1)',
+  'hsla(3510, 67%, 96%, 1)',
   'hsla(334, 92%, 94%, 1)',
   'hsla(334, 92%, 92%, 1)',
   'hsla(334, 92%, 90%, 1)',
@@ -76,6 +76,16 @@ const darkShadows = {
   shadow6: 'rgba(0,0,0,0.7)',
 };
 
+export const lightGrays = {
+  gray: '#aab8c2',
+  softGray: '#d2dce4',
+};
+
+export const darkGrays = {
+  gray: '#aab8c2',
+  softGray: '#d2dce4',
+};
+
 const builtThemes = createThemes({
   componentThemes: defaultComponentThemes,
 
@@ -89,10 +99,12 @@ const builtThemes = createThemes({
       light: {
         ...lightShadows,
         shadowColor: lightShadows.shadow1,
+        ...lightGrays,
       },
       dark: {
         ...darkShadows,
         shadowColor: darkShadows.shadow1,
+        ...darkGrays,
       },
     },
   },
