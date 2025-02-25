@@ -1,7 +1,7 @@
 import React from 'react';
 import { YStack } from 'tamagui';
-import HomeTabView from '../../components/home-screen/home-tab-view';
-import TopWelcome from '../../components/home-screen/TopWelcome';
+import HomeTabView from './components/home-tab-view/index';
+import TopWelcome from './components/TopWelcome';
 
 export default function HomeScreen() {
   return (

@@ -6,9 +6,9 @@ import Carousel, {
   Pagination,
 } from 'react-native-reanimated-carousel';
 import { ScrollView, Text, View, YStack } from 'tamagui';
-import { lightGrays } from '../../../../theme/themes';
-import { Suggestion } from '../../../../types/Suggestion';
-import { suggestionsData } from '../../../../constants/mockdata';
+import { lightGrays } from '../../../../../theme/themes';
+import { Suggestion } from '../../../../../types/Suggestion';
+import { suggestionsData } from '../../../../../constants/mockdata';
 import SuggestionDetails from './SuggestionDetails';
 
 const width = Dimensions.get('window').width;

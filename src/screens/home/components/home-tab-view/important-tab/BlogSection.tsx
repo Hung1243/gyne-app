@@ -2,12 +2,12 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { Button, H2, View, XStack, YStack } from 'tamagui';
-import { HomeStackParamList } from '../../../../navigation/types';
-import { lightAccentPalette } from '../../../../theme/themes';
+import { HomeStackParamList } from '../../../../../navigation/types';
+import { lightAccentPalette } from '../../../../../theme/themes';
 import BlogCard from './BlogCard';
 import { useState } from 'react';
-import { Blog } from '../../../../types/Blog';
-import { blogsData as blogsData } from '../../../../constants/mockdata';
+import { Blog } from '../../../../../types/Blog';
+import { blogsData as blogsData } from '../../../../../constants/mockdata';
 
 const DISPLAYED_BLOG_COUNT = 5;
 const CARD_HEIGHTS = [180, 240, 160, 160, 180];

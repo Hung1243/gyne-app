@@ -1,7 +1,7 @@
 import { Image, Text, View } from 'tamagui';
-import GyneShape1 from '../../../../../assets/svgs/gyne-shape-1.svg';
-import GyneShape2 from '../../../../../assets/svgs/gyne-shape-2.svg';
-import { Suggestion } from '../../../../types/Suggestion';
+import GyneShape1 from '../../../../../../assets/svgs/gyne-shape-1.svg';
+import GyneShape2 from '../../../../../../assets/svgs/gyne-shape-2.svg';
+import { Suggestion } from '../../../../../types/Suggestion';
 
 export default function SuggestionDetails({
   suggestion,
