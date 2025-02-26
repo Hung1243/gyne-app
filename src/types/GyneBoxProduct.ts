@@ -1,6 +1,10 @@
 export type GyneBoxProduct = {
   id: string;
   title: string;
+  description: string;
+  imageUrl: string;
+  details: string;
+  brand: string;
 };
 
 export type GyneBoxProductCategory = {

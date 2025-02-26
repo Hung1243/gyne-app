@@ -1,5 +1,8 @@
+import { SectionListData } from 'react-native';
 import { Blog } from '../types/Blog';
 import { Suggestion } from '../types/Suggestion';
+import { GyneBoxProduct } from '../types/GyneBoxProduct';
+import { SectionType } from '../types/SectionType';
 
 export const blogsData: Blog[] = [
   {
@@ -103,5 +106,67 @@ export const suggestionsData: Suggestion[] = [
     imageUrl: 'https://benh.vn/wp-content/uploads/2018/04/tampon.jpg',
     details:
       'Tampon có nhiều loại với nhiều kích cỡ, độ thấm hút khác nhau cho những ngày khác nhau của kỳ kinh nguyệt. Hầu hết tampon được làm bằng sợi tơ nhân tạo kết hợp với sợi bông tổng hợp nên khả năng thấm hút rất tốt. Tampon hữu cơ được làm từ 100% cotton.',
+  },
+];
+
+export const gyneProductsData: SectionType<GyneBoxProduct[]>[] = [
+  {
+    title: 'Main dishes',
+    data: [
+      [
+        {
+          id: '1',
+          title: 'Băng Vệ Sinh Diana Sensi Cool Fresh Mát Dịu Siêu',
+          description: 'Description for Dish 1',
+          imageUrl:
+            'https://www.guardian.com.vn/media/catalog/product/cache/30b2b44eba57cd45fd3ef9287600968e/3/0/3024955_zhhc8dmf5dd1chsv.jpg',
+          details: 'Details for Dish 1',
+          brand: 'Diana',
+        },
+        {
+          id: '2',
+          title: 'Băng Vệ Sinh Diana Sensi Cool Fresh Mát Dịu Siêu',
+          description: 'Description for Dish 1',
+          imageUrl:
+            'https://www.guardian.com.vn/media/catalog/product/cache/30b2b44eba57cd45fd3ef9287600968e/3/0/3024955_zhhc8dmf5dd1chsv.jpg',
+          details: 'Details for Dish 1',
+          brand: 'Diana',
+        },
+        {
+          id: '3',
+          title: 'Băng Vệ Sinh Diana Sensi Cool Fresh Mát Dịu Siêu',
+          description: 'Description for Dish 1',
+          imageUrl:
+            'https://www.guardian.com.vn/media/catalog/product/cache/30b2b44eba57cd45fd3ef9287600968e/3/0/3024955_zhhc8dmf5dd1chsv.jpg',
+          details: 'Details for Dish 1',
+          brand: 'Diana',
+        },
+        {
+          id: '4',
+          title: 'Băng Vệ Sinh Diana Sensi Cool Fresh Mát Dịu Siêu',
+          description: 'Description for Dish 1',
+          imageUrl:
+            'https://www.guardian.com.vn/media/catalog/product/cache/30b2b44eba57cd45fd3ef9287600968e/3/0/3024955_zhhc8dmf5dd1chsv.jpg',
+          details: 'Details for Dish 1',
+          brand: 'Diana',
+        },
+      ],
+    ],
+  },
+  {
+    title: 'Main Threshes',
+    data: [
+      [
+        {
+          id: '-1',
+          title: 'Thresh 1',
+          description: 'Description for Thresh 1',
+          imageUrl:
+            'https://www.guardian.com.vn/media/catalog/product/cache/30b2b44eba57cd45fd3ef9287600968e/3/0/3024955_zhhc8dmf5dd1chsv.jpg',
+          details: 'Details for Thresh 1',
+          brand: 'ayoo',
+        },
+      ],
+    ],
   },
 ];
