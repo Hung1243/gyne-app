@@ -1,22 +1,49 @@
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { useTheme, View } from 'tamagui';
 import { CalendarScreen } from '../screens/calendar';
 import { PartnerScreen } from '../screens/partner';
 import { ProfileScreen } from '../screens/profile';
-import { lightGrays, lightPalette } from '../theme/themes';
-import { MainTabParamList } from './types';
 import { HomeStackNavigator } from './HomeStackNavigator.tsx';
+import { MainTabParamList } from './types';
 
 const Tab = createBottomTabNavigator<MainTabParamList>();
 
 export function MainTabNavigator() {
+  const theme = useTheme();
+
   return (
     <Tab.Navigator
       screenOptions={{
-        tabBarActiveTintColor: lightPalette[8],
-        tabBarInactiveTintColor: lightGrays.gray,
+        tabBarActiveTintColor: theme.color9.val,
+        tabBarInactiveTintColor: theme.gray.val,
+        tabBarIconStyle: {
+          marginTop: 20,
+        },
+        tabBarLabel: ({ focused }) => {
+          if (!focused) return null;
+
+          return (
+            <View
+              borderRadius={'$5'}
+              width={6}
+              height={6}
+              backgroundColor={'$color9'}
+              marginTop={4}
+            ></View>
+          );
+        },
+        tabBarItemStyle: {
+          height: 100,
+        },
         tabBarStyle: {
-          paddingBottom: 5,
+          position: 'absolute',
+          borderRadius: 24,
+          shadowColor: 'black',
+          shadowOffset: { width: 0, height: -4 },
+          shadowOpacity: 0.2,
+          shadowRadius: 6,
+          height: 100,
         },
       }}
     >
