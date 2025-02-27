@@ -6,7 +6,13 @@ export function PartnerScreen() {
   const toast = useToastController();
 
   return (
-    <YStack flex={1} justifyContent="center" alignItems="center" gap={'$2'}>
+    <YStack
+      flex={1}
+      justifyContent="center"
+      alignItems="center"
+      gap={'$2'}
+      paddingVertical={90}
+    >
       <Text>Partner Screen</Text>
       <Button
         theme={'error'}

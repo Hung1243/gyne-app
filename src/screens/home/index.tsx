@@ -5,7 +5,7 @@ import TopWelcome from '../../components/home-screen/TopWelcome';
 
 export default function HomeScreen() {
   return (
-    <YStack flex={1} backgroundColor="$color1">
+    <YStack flex={1} backgroundColor="$color1" paddingVertical={90}>
       <TopWelcome />
       <HomeTabView />
     </YStack>
