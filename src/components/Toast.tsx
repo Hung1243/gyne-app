@@ -1,46 +1,30 @@
+import { FontAwesome5 } from '@expo/vector-icons';
 import { Toast, useToastState } from '@tamagui/toast';
 import { XStack, YStack } from 'tamagui';
-import { FontAwesome5 } from '@expo/vector-icons';
 
 const TOAST_STYLES = {
   success: {
-    backgroundColor: '#E8F5E9',
     iconColor: '#2E7D32',
-    borderColor: '#A5D6A7',
-    textColor: '#1B5E20',
     iconName: 'check-circle',
   },
   error: {
-    backgroundColor: '#FFEBEE',
     iconColor: '#C62828',
-    borderColor: '#FFCDD2',
-    textColor: '#B71C1C',
     iconName: 'times-circle',
   },
   warning: {
-    backgroundColor: '#FFF3E0',
     iconColor: '#EF6C00',
-    borderColor: '#FFCC80',
-    textColor: '#E65100',
     iconName: 'exclamation-circle',
-  },
-  info: {
-    backgroundColor: '#E3F2FD',
-    iconColor: '#1565C0',
-    borderColor: '#90CAF9',
-    textColor: '#0D47A1',
-    iconName: 'info-circle',
   },
 };
 
 export const CurrentToast = () => {
   const currentToast = useToastState();
+
   if (!currentToast || currentToast.isHandledNatively) return null;
 
-  const type =
-    (currentToast.customData?.type as keyof typeof TOAST_STYLES) || 'success';
-  const { backgroundColor, iconColor, borderColor, textColor, iconName } =
-    TOAST_STYLES[type];
+  const theme =
+    (currentToast.customData?.theme as keyof typeof TOAST_STYLES) || 'success';
+  const { iconColor, iconName } = TOAST_STYLES[theme];
 
   return (
     <Toast
@@ -48,24 +32,22 @@ export const CurrentToast = () => {
       duration={currentToast.duration}
       enterStyle={{ opacity: 0, scale: 0.95, y: -10 }}
       exitStyle={{ opacity: 0, scale: 1, y: -8 }}
-      y={0}
-      opacity={1}
-      scale={1}
       animation="quick"
-      viewportName={currentToast.viewportName}
-      backgroundColor={backgroundColor}
-      borderRadius={24}
-      paddingHorizontal={16}
-      paddingVertical={12}
+      backgroundColor={'$color2'}
+      borderRadius={'$6'}
+      paddingHorizontal={'$4'}
+      paddingVertical={'$3'}
       borderWidth={1}
-      borderColor={borderColor}
+      borderColor={'$color7'}
       width={300}
       alignSelf="center"
-      shadowColor="rgba(0,0,0,0.05)"
-      shadowOffset={{ width: 0, height: 2 }}
-      shadowRadius={8}
+      shadowOffset={{ width: 4, height: 4 }}
+      shadowOpacity={0.1}
+      shadowRadius={4}
+      shadowColor={'$shadow1'}
+      theme={theme}
     >
-      <XStack space="$2" alignItems="center">
+      <XStack gap="$2" alignItems="center">
         <FontAwesome5
           name={iconName}
           size={18}
@@ -74,7 +56,7 @@ export const CurrentToast = () => {
         />
         <YStack flex={1}>
           <Toast.Title
-            color={textColor}
+            color={'$color12'}
             fontWeight="600"
             fontSize={14}
             lineHeight={18}
@@ -83,7 +65,7 @@ export const CurrentToast = () => {
           </Toast.Title>
           {currentToast.message && (
             <Toast.Description
-              color={textColor}
+              color={'$color11'}
               fontSize={13}
               lineHeight={16}
               opacity={0.9}

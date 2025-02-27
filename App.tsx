@@ -7,6 +7,7 @@ import { AppNavigator } from './src/navigation/AppNavigator';
 import { ThemeProvider } from './src/providers/ThemeProvider';
 import { store } from './src/redux/store';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { CurrentToast } from './src/components/Toast';
 
 export default function App() {
   console.log('🏁 App mounting');
@@ -28,13 +29,13 @@ export default function App() {
           <ToastProvider>
             <AppNavigator />
             <ToastViewport
-              multipleToasts
               position="absolute"
               top={50}
               left={0}
               right={0}
               padding="$2"
             />
+            <CurrentToast />
           </ToastProvider>
         </ThemeProvider>
       </ReduxProvider>
