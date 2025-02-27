@@ -1,6 +1,8 @@
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { useTheme, View } from 'tamagui';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { Image, useTheme, View } from 'tamagui';
+import CalendarStrip from '../components/CalendarStrip';
 import { CalendarScreen } from '../screens/calendar';
 import { PartnerScreen } from '../screens/partner';
 import { ProfileScreen } from '../screens/profile';
@@ -11,6 +13,7 @@ const Tab = createBottomTabNavigator<MainTabParamList>();
 
 export function MainTabNavigator() {
   const theme = useTheme();
+  const insets = useSafeAreaInsets();
 
   return (
     <Tab.Navigator
@@ -45,6 +48,30 @@ export function MainTabNavigator() {
           shadowRadius: 6,
           height: 100,
         },
+        headerTransparent: true,
+        header: () => (
+          <View
+            paddingTop={insets.top}
+            flexDirection="row"
+            alignItems="center"
+            paddingHorizontal={'$3'}
+            justifyContent="space-between"
+          >
+            <View flex={1}>
+              <Image
+                overflow="hidden"
+                aspectRatio={1}
+                source={{
+                  width: 36,
+                  height: 36,
+                  uri: require('../../assets/images/gyne-logo.png'),
+                }}
+              />
+            </View>
+            <CalendarStrip />
+            <View flex={1} />
+          </View>
+        ),
       }}
     >
       <Tab.Screen

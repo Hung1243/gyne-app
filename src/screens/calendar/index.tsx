@@ -20,7 +20,7 @@ export function CalendarScreen() {
 
   return (
     <Theme name="light">
-      <ScrollView backgroundColor="$color2" padding="$4">
+      <ScrollView backgroundColor="$color2" padding="$4" paddingVertical={100}>
         <YStack flex={1} backgroundColor="$color2" gap="$6">
           {/* Calendar and Period Countdown Container */}
           <XStack
