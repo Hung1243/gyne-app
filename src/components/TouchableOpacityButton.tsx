@@ -17,12 +17,17 @@ export default function TouchableOpacityButton({
     <TouchableOpacity onPress={wrapperProps.onPress}>
       <View
         borderRadius={'$5'}
-        backgroundColor={'$color3'}
+        backgroundColor={'$color9'}
         paddingVertical={'$3'}
         paddingHorizontal={'$5'}
         {...viewProps}
       >
-        <Text fontWeight={'bold'} textAlign="center" {...textProps}>
+        <Text
+          fontWeight={'bold'}
+          textAlign="center"
+          color={'white'}
+          {...textProps}
+        >
           {children}
         </Text>
       </View>

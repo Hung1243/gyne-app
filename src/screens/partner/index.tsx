@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 import { TouchableOpacity } from 'react-native';
 import { H1, Text, useTheme, View, YStack } from 'tamagui';
 import TouchableOpacityButton from '../../components/TouchableOpacityButton';
+import BackgrounEllipses from '../../components/BackgroundEllipses';
 
 export function PartnerScreen() {
   const [code, setCode] = useState<string>('');
@@ -41,7 +42,11 @@ export function PartnerScreen() {
       gap={'$3'}
       padding={'$3'}
       backgroundColor={'$color1'}
+      position="relative"
     >
+      {/* Background */}
+      <BackgrounEllipses />
+
       {/* Header */}
       <H1
         color={'$accent12'}
